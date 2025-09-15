@@ -4,6 +4,7 @@ import AboutUs from "./pages/AboutUs";
 import ProductsPage from "./pages/ProductsPage";
 import Header from "./components/Header";
 import ProductsDetails from "./pages/ProductsDetails";
+import { BudgetProvider } from "./contexts/BudgetContext";
 
 function App() {
 
