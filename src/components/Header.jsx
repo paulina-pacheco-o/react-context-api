@@ -1,7 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useBudget } from '../contexts/BudgetContext';
 
 const Header = () => {
+
+  const { budgetMode, toggleBudgetMode } = useBudget();
+
   return (
     <div className="container">
       <div className="row">
@@ -18,7 +22,7 @@ const Header = () => {
                 <NavLink to="/productspage">Pagina prodotti</NavLink>
               </li>
             </ul>
-            <div className="btn btn-primary">Modalità Budget</div>
+            <div className="btn btn-primary" onClick={toggleBudgetMode}>{budgetMode ? "Disattiva Modalità Budget" : "Attiva Modalità Budget"}</div>
           </div>
         </div>
       </div>
