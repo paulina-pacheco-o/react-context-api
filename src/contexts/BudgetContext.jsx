@@ -8,4 +8,15 @@ const BudgetProvider = ({ children }) => {
   const toggleBudgetMode = () => {
     setBudgetMode(!budgetMode)
   }
+
+  return (<BudgetContext.Provider value={{ budgetMode, toggleBudgetMode }}>
+    {children}
+  </BudgetContext.Provider>)
 }
+
+const useBudget = () => {
+  const context = useContext(BudgetContext);
+  return context
+};
+
+export { BudgetProvider, useBudget };

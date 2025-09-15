@@ -9,16 +9,18 @@ function App() {
 
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/productspage">
-          <Route index element={<ProductsPage />} />
-          <Route path=":id" element={<ProductsDetails />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <BudgetProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/productspage">
+            <Route index element={<ProductsPage />} />
+            <Route path=":id" element={<ProductsDetails />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </BudgetProvider>
   )
 }
 
